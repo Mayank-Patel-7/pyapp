@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PDF Summarizer</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".pdf">
+      <input type="submit" value="Upload and Summarize">
+    </form>
+    {% if error %}
+      <p style="color: red">{{ error }}</p>
+    {% elif summary %}
+      <h2>Summary:</h2>
+      <textarea rows="10" cols="50">{{ summary }}</textarea>
+    {% endif %}
+</body>
+</html>
